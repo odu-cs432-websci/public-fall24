@@ -14,7 +14,7 @@ The Web has fundamentally changed how we learn, play, communicate, and work. Its
 
 Nasreen Arif: nasreen at cs.odu.edu, <https://nasreenarif.github.io/>
 
-My office hours will be Thursday from 1:30 PM to 2:30 PM, or by appointment. All office hours will be held via Zoom (see Canvas for the link to the Zoom meeting room). Students will be placed into the waiting room if I am already meeting with another student. If you cannot attend during regular office hours, please contact me to set up an alternate appointment time.
+My office hours will be Thursday from 4:30 PM to 5:30 PM, or by appointment. All office hours will be held via Zoom (see Canvas for the link to the Zoom meeting room). Students will be placed into the waiting room if I am already meeting with another student. If you cannot attend during regular office hours, please contact me to set up an alternate appointment time.
 
 ## Course Objectives
 

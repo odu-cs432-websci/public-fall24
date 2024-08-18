@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>syllabus.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="cs-432532-fall-2024-syllabus">CS 432/532, Fall 2024 Syllabus</h1>
+<p><a href="#summary-schedule">Jump to Summary Schedule</a> | <a href="https://github.com/odu-cs432-websci/public-fall24/raw/main/syllabus.pdf">Download printable PDF version</a></p>
+<h2 id="course-overview">Course Overview</h2>
+<p>The Web has fundamentally changed how we learn, play, communicate, and work. Its influence has become so monumental that it has given birth to a new science: Web Science, or the science of decentralized information structures. Although Web Science is interdisciplinary by nature, this course will be focusing mainly on the computing aspects of the Web.</p>
+<p><strong>Catalog Description:</strong> Provides an overview of the World Wide Web and associated decentralized information structures, focusing mainly on the computing aspects of the Web: how it works, how it is used, and how it can be analyzed. Students will examine a number of topics including: web architecture, web characterization and analysis, web archiving, Web 2.0, social networks, collective intelligence, search engines, web mining, information diffusion on the web, and the Semantic Web.</p>
+<p><strong>Prerequisites:</strong> A grade of C or better in CS 361 and CS 330.</p>
+<h2 id="instructor-contact-and-office-hours">Instructor Contact and Office Hours</h2>
+<p>Nasreen Arif: nasreen at cs.odu.edu, <a href="https://nasreenarif.github.io/">https://nasreenarif.github.io/</a></p>
+<p>My office hours will be Thursday from 4:30 PM to 5:30 PM, or by appointment. All office hours will be held via Zoom (see Canvas for the link to the Zoom meeting room). Students will be placed into the waiting room if I am already meeting with another student. If you cannot attend during regular office hours, please contact me to set up an alternate appointment time.</p>
+<h2 id="course-objectives">Course Objectives</h2>
+<p>After completing this course, you should be able to do the following:</p>
+<ul>
+<li>Explain the interdisciplinary nature of web science.</li>
+<li>Explain the main components of web architecture.</li>
+<li>Explain how search engines index and rank webpages given a query.</li>
+<li>Write Python code to interact with various web APIs and services, including web servers, web archives, Memento aggregators, and the Twitter API.</li>
+<li>Explain the impact of social networks on how information (and disinformation) is spread on the web.</li>
+<li>Explain the differences between classification and clustering algorithms.</li>
+<li>Identify appropriate machine learning algorithms to apply given a problem.</li>
+</ul>
+<h2 id="course-delivery-method">Course Delivery Method</h2>
+<p>All sections of this course will be delivered fully online, asynchronously (no meeting time requirement). Course materials, including lecture videos, will be distributed via Canvas. All deadlines are based on the local timezone in Norfolk, VA.</p>
+<h3 id="sections">Sections</h3>
+<p>CS 432 (undergraduate) sections:</p>
+<ul>
+<li>CRN 22336 - WEB2 (in Hampton Roads)</li>
+<li>CRN 22338 - WEB5 (in Virginia, but outside of Hampton Roads)</li>
+<li>CRN 22339 - WEB7 (in the US, but outside of Virginia)</li>
+</ul>
+<p>CS 532 (graduate) sections:</p>
+<ul>
+<li>CRN 22340 - WEB2 (in Hampton Roads or in Virginia)</li>
+<li>CRN 22341 - WEB5 (in Virginia, but outside of Hampton Roads)</li>
+<li>CRN 22342 - WEB7 (in the US, but outside of Virginia)</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Prerequisites: Standing as an undergraduate senior, graduate student, or approval from the instructor. Undergraduates should have a grade of C or better in CS 361 and CS 330.</p>
+<p>We will be using Python this semester. You are not required to know Python ahead of time, but since <em>you are required to have previous programming experience</em>, I expect you to be able to pick up the syntax quickly. If you are unfamiliar with Python, I strongly suggest that you spend a bit of time with it before the semester begins.</p>
+<p>Here are some good Intro to Python resources:</p>
+<ul>
+<li><a href="http://introtopython.org/">Introduction to Python</a></li>
+<li><a href="http://www.cs.cornell.edu/courses/cs1110/2012fa/">CS 1110: Introduction to Computing Using Python</a> (Cornell University)</li>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/lectures/">A Gentle Introduction to Programming Using Python</a> (MIT)</li>
+<li><a href="http://courses.cms.caltech.edu/cs11/material/python/index.html">Python Track: Introduction</a> (Cal Tech)</li>
+<li><a href="http://www-cs-faculty.stanford.edu/~nick/python-in-one-easy-lesson/">Python in One Easy Lesson</a>, Nick Parlante</li>
+</ul>
+<h3 id="textbook">Textbook</h3>
+<p>There is no required textbook, but here is a list of recommended books:</p>
+<ul>
+<li><a href="https://www.oreilly.com/library/view/python-in-a/0596001886/"><em>Python in a Nutshell</em></a> - 3rd edition available <a href="https://go.oreilly.com/old-dominion-university//library/view/python-in-a/9781491913833/">via ODU</a>
+<ul>
+<li>mentioned in Module 2</li>
+</ul>
+</li>
+<li><a href="https://www.oreilly.com/library/view/learning-python-5th/9781449355722/"><em>Learning Python</em></a> - 5th edition available <a href="https://go.oreilly.com/old-dominion-university/library/view/learning-python-5th/9781449355722/">via ODU</a>
+<ul>
+<li>mentioned in Module 2</li>
+</ul>
+</li>
+<li><a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-047052684X.html"><em>An Introduction to Search Engines and Web Navigation</em></a>
+<ul>
+<li>used in Module 4</li>
+</ul>
+</li>
+<li><a href="https://ciir.cs.umass.edu/irbook/"><em>Search Engines Information Retrieval in Practice</em></a> - pdf available
+<ul>
+<li>used in Module 4</li>
+</ul>
+</li>
+<li><a href="https://nlp.stanford.edu/IR-book/"><em>Introduction to Information Retrieval</em></a> - pdf available
+<ul>
+<li>used in Module 4</li>
+</ul>
+</li>
+<li><a href="http://www.cs.cornell.edu/home/kleinber/networks-book/"><em>Networks, Crowds, and Markets: Reasoning About a Highly Connected World</em></a> - preprint available
+<ul>
+<li>used in Modules 7, 8</li>
+</ul>
+</li>
+<li><a href="https://www.oreilly.com/library/view/programming-collective-intelligence/9780596529321/"><em>Programming Collective Intelligence</em></a> - available <a href="https://go.oreilly.com/old-dominion-university/library/view/programming-collective-intelligence/9780596529321/">via ODU</a>
+<ul>
+<li>used in Modules 10-12, 14</li>
+</ul>
+</li>
+<li><a href="https://web.stanford.edu/~jurafsky/slp3/"><em>Speech and Language Processing</em></a> - pdf available
+<ul>
+<li>mentioned in Modules 2, 4, 12</li>
+</ul>
+</li>
+</ul>
+<h2 id="grading">Grading</h2>
+<p>There will be a total of 100 points available for the semester.</p>
+<h3 id="assignment-types">Assignment Types</h3>
+<p>Your grade in this class will be based on the following components:</p>
+<p><strong>Learning Checks (LC)</strong> - 5 points</p>
+<ul>
+<li>Preparation for the week's topic</li>
+<li>Learning Checks released via Canvas on Saturdays and due on Fridays</li>
+<li>I will not grade your submissions for correctness, but correct answers with references will be provided after the due date.</li>
+<li>Full credit will be awarded only if all Learning Checks are complete and have been submitted on time.</li>
+</ul>
+<p><strong>Online Discussion</strong> - 5 points</p>
+<ul>
+<li>Class discussion based on the week's topic or current events.</li>
+<li>The Discussion Question (DQ) will be released on Saturdays. Your initial response is due on Fridays and a follow-up to at least one classmate's posting is due on Sundays.</li>
+<li>Full credit will be awarded only if all Discussion Questions have been answered on time and follow-ups have been posted on time in more than half of the weeks (so 8 follow-ups if we have 14 weeks of discussion questions).</li>
+</ul>
+<p><strong>Homework (HW)</strong> - 90 points</p>
+<ul>
+<li>Implement concepts from class along with a report</li>
+<li>9 homework assignments (HW1-HW9), each worth 10 points</li>
+<li>Released on Saturdays and usually due 2 weeks later on Sunday</li>
+<li><em>Don't wait until the last minute -- these are hard and time-consuming!</em></li>
+<li>Grading scale: 0-10
+<ul>
+<li>2 points are reserved for the required report</li>
+<li>many homework assignments will have extra credit opportunities</li>
+</ul>
+</li>
+<li>All work must be your own. You may use resources on the Internet for reference, but you must not copy large sections of code. If you use online resources, you must cite your sources (including URL). Group work on HW assignments is not acceptable.</li>
+</ul>
+<p><em>There is no mid-term or final exam.</em></p>
+<h3 id="grading-scale">Grading Scale</h3>
+<p>The grading scale for undergraduate students (CS 432) is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>points</th>
+<th>letter</th>
+<th></th>
+<th>points</th>
+<th>letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100-92</td>
+<td>A</td>
+<td></td>
+<td>77-72</td>
+<td>C</td>
+</tr>
+<tr>
+<td>91-90</td>
+<td>A-</td>
+<td></td>
+<td>71-70</td>
+<td>C-</td>
+</tr>
+<tr>
+<td>89-87</td>
+<td>B+</td>
+<td></td>
+<td>69-67</td>
+<td>D+</td>
+</tr>
+<tr>
+<td>86-82</td>
+<td>B</td>
+<td></td>
+<td>66-62</td>
+<td>D</td>
+</tr>
+<tr>
+<td>81-80</td>
+<td>B-</td>
+<td></td>
+<td>61-60</td>
+<td>D-</td>
+</tr>
+<tr>
+<td>79-77</td>
+<td>C+</td>
+<td></td>
+<td>59-00</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<p>The grading scale for graduate students (CS 532) is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>points</th>
+<th>letter</th>
+<th></th>
+<th>points</th>
+<th>letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100-94</td>
+<td>A</td>
+<td></td>
+<td>79-78</td>
+<td>C+</td>
+</tr>
+<tr>
+<td>93-90</td>
+<td>A-</td>
+<td></td>
+<td>77-74</td>
+<td>C</td>
+</tr>
+<tr>
+<td>89-88</td>
+<td>B+</td>
+<td></td>
+<td>73-70</td>
+<td>C-</td>
+</tr>
+<tr>
+<td>87-84</td>
+<td>B</td>
+<td></td>
+<td>69-0</td>
+<td>F</td>
+</tr>
+<tr>
+<td>83-80</td>
+<td>B-</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="late-assignments">Late Assignments</h3>
+<p>Any assignment submitted after its deadline is considered late. Late assignments lose 1 point for every 24 hours they are late. Submissions over 72 hours late are not accepted. This time limit includes weekends -- they are counted just like weekdays. I reserve the right to specify that late submissions will not be accepted for particular assignments.</p>
+<ul>
+<li>0-24 hours late: -1 point</li>
+<li>25-48 hours late: -2 points</li>
+<li>49-72 hours late: -3 points</li>
+<li>over 72 hours late: not accepted</li>
+</ul>
+<h2 id="summary-schedule">Summary Schedule</h2>
+<p><em>Note: This is a tentative schedule and may change during the semester. The complete schedule with assignments and due dates will be posted on Canvas.</em></p>
+<p>Typical weekly schedule:</p>
+<ul>
+<li>Saturday - new module course materials, Learning Checks (LC), Discussion Question (DQ), and HW assignment released</li>
+<li>Friday - LC due, initial DQ response due</li>
+<li>Sunday - followup DQ response due, HW assignment due (usually from a previous week)</li>
+</ul>
+<p><a href="https://www.odu.edu/academics/calendar/fall">ODU Fall 2024 academic schedule</a></p>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Week Start Date</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Aug 24</td>
+<td>Introduction to Web Science and Web Architecture</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Aug 31</td>
+<td>Introduction to Python</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sept 7</td>
+<td>Measuring the Web</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Sept 14</td>
+<td>Searching the Web</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Sept 21</td>
+<td>Introduction to Info Vis with R, Python</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Sept 28</td>
+<td>Archiving the Web</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Oct 5</td>
+<td>Social Networks</td>
+</tr>
+<tr>
+<td></td>
+<td>Oct 12</td>
+<td><strong>October 12-15 NO CLASS - Fall Break</strong></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Oct 19</td>
+<td>Selection and Social Influence</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Oct 26</td>
+<td>Visualizing Social Networks</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Nov 2</td>
+<td>Collective Intelligence and Recommender Systems</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Nov 9</td>
+<td>Clustering Algorithms</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Nov 16</td>
+<td>Document Filtering (Classification)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Nov 23</td>
+<td>Disinformation and LLMs</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Monday, Dec 2</td>
+<td>kNN and Algorithm Summary</td>
+</tr>
+<tr>
+<td></td>
+<td>Friday, Dec 6</td>
+<td><em>last day of classes</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-courses">Related Courses</h2>
+<ul>
+<li>All things HTTP - <a href="https://cs531-f19.github.io/">CS 531 - Web Server Design</a></li>
+<li>Information retrieval, metadata - <a href="https://www.cs.odu.edu/~jwu/downloads/teaching/cs734-834-fall2021-syllabus.pdf">CS 734/834 - Intro to Information Retrieval</a></li>
+<li>Visualization, Analytics - <a href="https://weiglemc.github.io/teaching/2023-fall-cs625">CS 625 - Data Visualization</a>, <a href="https://weiglemc.github.io/teaching/2024-spr-cs725825">CS 725/825 - Information Visualization</a></li>
+<li>Web programming, <a href="https://github.com/nasreenarif/cs418518-f24/blob/main/README.md">CS 418/518 - Web Programming</a></li>
+<li>Data science - <a href="https://www.cs.odu.edu/~sampath/courses/f22/cs620/">CS 620 - Intro to Data Science</a></li>
+</ul>
+<h2 id="course-history">Course History</h2>
+<p>This course at ODU has been taught by <a href="https://www.cs.odu.edu/~mweigle/">Dr. Michele Weigle</a> and was originally developed by <a href="https://www.cs.odu.edu/~mln/">Dr. Michael Nelson</a>, based on Dr. Frank McCown (ODU alum)'s Intro to Web Science course at Harding University. In previous semesters, it has also been taught by Dr. Alexander Nwala (former PhD student at ODU).</p>
+<h2 id="course-policies">Course Policies</h2>
+<h3 id="emailcanvas">Email/Canvas</h3>
+<p>Each student must check email and the class Canvas site daily. You should use our class Canvas Discussion Board to ask and answer general course-related questions. I will use Canvas Announcements to notify you about important updates (assignment deadline changes, office hours cancellations, etc.).</p>
+<h3 id="participation">Participation</h3>
+<p>Since this is an online class, it is essential that you regularly stay involved in class activities. This includes checking the class Canvas for announcements, submitting assignments on time, and responding to discussion posts in a timely manner.</p>
+<h3 id="make-up-work">Make-up Work</h3>
+<p>Make-ups for graded activities are possible only with a valid written medical or university excuse. It is the student's responsibility to give the instructor the written excuse and to arrange for any makeup work to be done.</p>
+<h3 id="disability-services">Disability Services</h3>
+<p>In compliance with PL94-142 and more recent federal legislation affirming the rights of disabled individuals, provisions will be made for students with special needs on an individual basis. The student must have been identified as special needs by the university and an appropriate letter must be provided to the course instructor. Provision will be made based upon written guidelines from the University's <a href="https://www.odu.edu/accessibility">Office of Educational Accessibility</a>. All students are expected to fulfill all course requirements.</p>
+<p>Students are encouraged to self-disclose disabilities that have been verified by the Office of Educational Accessibility by providing Accommodation Letters to their instructors early in the semester in order to start receiving accommodations. Accommodations will not be made until the Accommodation Letters are provided to instructors each semester.</p>
+<h3 id="seeking-help">Seeking Help</h3>
+<p>The course Canvas site should be your first reference for questions about the class. If you have questions about course requirements or materials, post questions using the class Canvas Discussion Board. For extra help, attend office hours.</p>
+<h3 id="use-of-chatgpt-and-other-ai-tools">Use of ChatGPT and other AI Tools</h3>
+<p>The use of ChatGPT or other AI tools is permitted <em>to some extent</em> in this class. These tools are being rapidly adopted, so it is important that you have some experience with their use. These tools are best used to help you work smarter, not do your work for you. Remember that an essential part of being in graduate school is to develop skills that you will need to be successful in the workplace. Using aids just to complete an assignment in the quest for high marks will not help you after you leave school.</p>
+<p>I encourage you to use these tools to help you deepen your understanding and to review material you find challenging. If you use them to blindly do your homework for you, your learning will suffer and it will be obvious. But, if you use them to help clarify misunderstandings as you go, you will work and learn faster and hopefully build a solid foundation.</p>
+<p>For all homework assignments, you must include a list of websites or other references that you consult in solving the assignment. This includes AI tools. Not only must you include the website for the tool, but you must include a link to, or screenshot of, the conversation you had with the tool. (ChatGPT has the option to create a link to a conversation.) You must also write out in your HW report the initial prompt that you used.</p>
+<p>See <a href="chat-gpt.md">Guidelines on the Use of ChatGPT in CS 432/532</a> for further information about using these tools in class this semester.</p>
+<p><em>Note that this does not mean that ChatGPT is acceptable for use in other courses. This policy applies only for CS 432/532.</em></p>
+<h2 id="academic-integrity">Academic Integrity</h2>
+<p>Old Dominion University is committed to students' personal and academic success. In order to achieve this vision, students, faculty, and staff work together to create an environment that provides the best opportunity for academic inquiry and learning. All students must be honest and forthright in their academic studies. Your work in this course and classroom behavior must align with the expectations outlined in the Code of Student Conduct, which can be found at <a href="https://www.odu.edu/oscai">https://www.odu.edu/oscai</a>.</p>
+<p>The following behaviors along with classroom disruptions violate this policy, corrupt the educational process, and will not be tolerated.</p>
+<ul>
+<li>Cheating: Using unauthorized assistance, materials, study aids, or other information in any academic exercise.</li>
+<li>Plagiarism: Using someone else's language, ideas, or other original material without acknowledging its source in any academic exercise.</li>
+<li>Fabrication: Inventing, altering or falsifying any data, citation or information in any academic exercise.</li>
+<li>Facilitation: Helping another student commit, or attempt to commit, any Academic Integrity violation, or failure to report suspected Academic Integrity violations to a faculty member.</li>
+</ul>
+<p><em>In particular, submitting anything that is not your own work without proper attribution (giving credit to the original author) is plagiarism and is considered to be an academic integrity violation. It is not acceptable to copy source code or written work from any other source (including other students, online resources), unless explicitly allowed in the assignment statement. In cases where using resources such as the Internet is allowed, proper attribution must be given.</em></p>
+<p>Any evidence of an academic integrity violation (cheating) will result in a 0 grade for the assignment/exam, and the incident will be submitted to the Department of Computer Science for further review. Note that academic integrity violations can result in a permanent notation being placed on the student's transcript or even expulsion from the University. Evidence of cheating may include a student being unable to satisfactorily answer questions asked by the instructor about a submitted solution. Cheating includes not only receiving unauthorized assistance, but also giving unauthorized assistance. For class files kept in Unix space, students are expected to use Unix file permission protections (chmod) to keep other students from accessing the files. Failure to adequately protect files may result in a student being held responsible for giving unauthorized assistance, even if not directly aware of it.</p>
+<p>Students may still provide legitimate assistance to one another. You are encouraged to form study groups to discuss course topics. Students should avoid discussions of solutions to ongoing assignments and should not, under any circumstances, show or share code solutions for an ongoing assignment.</p>
+<p>All students are responsible for knowing the rules. If you are unclear about whether a certain activity is allowed or not, please contact the instructor.</p>
+<p>More information on academic integrity is available on the ODU <a href="https://odu.edu/oscai">academic integrity page</a>.</p>
+<h2 id="statement-from-odu-counseling-services">Statement from ODU Counseling Services</h2>
+<p>ODU’s <a href="https://odu.edu/counselingservices">Office of Counseling Services</a> (OCS, 1526 Webb University Center) is a university agency with competent, diverse, and multidisciplinary professional staff. We are committed to supporting the emotional well-being, social development, and academic progress of all students at Old Dominion University.</p>
+<p>College life can be a wonderful time of self-discovery, but for many, it is also a time when the awareness of mental health conditions increases. OCS services are available to assist with addressing mental health concerns that a student may be experiencing. You can learn more about the broad range of confidential mental health services available on campus via our website at http://www.odu.edu/counselingservices. All services are free to ODU students.</p>
+
+</body>
+</html>
