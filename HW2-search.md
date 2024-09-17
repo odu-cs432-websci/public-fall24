@@ -123,11 +123,11 @@ Build a simple (i.e., no positional information) inverted file (in ASCII) for al
 
 ## Submission
 
-You should be working in the private GitHub repo that I created for you in the [odu-cs432-websci organization](https://github.com/odu-cs432-websci/) (your repo URL should look something like https<nolink>://github.com/odu-cs432-websci/spr24-*username*/). 
+You should be working in the private GitHub repo that I created for you in the [odu-cs432-websci organization](https://github.com/odu-cs432-websci/) (your repo URL should look something like https<nolink>://github.com/odu-cs432-websci/fall24-*username*/). 
 
 If you are working locally, make sure that you have committed and pushed your local repo, including `HW2-report.md` or `HW2-report.pdf` (and `HW2-report.tex`) and any images you reference, to GitHub. 
 
 Submit the URL of your report (*not the URL of your repo*) in Canvas under HW2. This should be something like  
-https<nolink>://github.com/odu-cs432-websci/spr24-*username*/blob/main/HW2-report.{md,pdf}
+https<nolink>://github.com/odu-cs432-websci/fall24-*username*/blob/main/HW2-report.{md,pdf}
 
 *If you make changes to your report after submitting in Canvas, I will use the last commit time in your repo as your assignment submission time.*
