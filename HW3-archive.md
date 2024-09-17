@@ -19,7 +19,7 @@ Obtain the [TimeMaps](http://www.mementoweb.org/guide/quick-intro/) for each of 
 
 There are two options for running MemGator locally:
 * Install a stand-alone version of MemGator on your own machine, see <https://github.com/oduwsdl/MemGator/releases>
-  * This was described in [EC-memgator](https://github.com/odu-cs432-websci/public-spr24/blob/main/getting-started/EC-memgator.md)
+  * This was described in [EC-memgator](https://github.com/odu-cs432-websci/public-fall24/blob/main/getting-started/EC-memgator.md)
 * Install [Docker Desktop](https://www.docker.com/products/docker-desktop) and run MemGator as a Docker Container, see notes at <https://github.com/oduwsdl/MemGator/blob/master/README.md>
 
 Here's an example:
@@ -27,7 +27,7 @@ Here's an example:
 `./memgator-darwin-amd64 -c "ODU CS432/532 YOUR_EMAIL_ADDRESS" -a https://raw.githubusercontent.com/odu-cs432-websci/public/main/archives.json -F 2 -f JSON https://www.cs.odu.edu/~mweigle/ > mweigle-tm.json`
 
 Notes:
-* As described in [EC-memgator](https://github.com/odu-cs432-websci/public-spr24/blob/main/getting-started/EC-memgator.md), you **must** include the `-c` and `-a` options to specify your contact information and to use the alternate `archives.json` file.
+* As described in [EC-memgator](https://github.com/odu-cs432-websci/public-fall24/blob/main/getting-started/EC-memgator.md), you **must** include the `-c` and `-a` options to specify your contact information and to use the alternate `archives.json` file.
 * When running this for all of your URIs, you might want to use the MD5 hash that you recorded earlier as part of the filename to help keep track of which TimeMaps you have.
 * You will want to add a sleep (at least 10-20 seconds) between each call to MemGator because if you make too many requests too quickly, you will get "connection refused" errors (or worse, get blocked by an archive). 
 
@@ -78,11 +78,11 @@ If you will end up with a very large table of memento counts, you can bin the nu
 
 ## Submission
 
-You should be working in the private GitHub repo that I created for you in the [odu-cs432-websci organization](https://github.com/odu-cs432-websci/) (your repo URL should look something like https<nolink>://github.com/odu-cs432-websci/spr24-*username*/). 
+You should be working in the private GitHub repo that I created for you in the [odu-cs432-websci organization](https://github.com/odu-cs432-websci/) (your repo URL should look something like https<nolink>://github.com/odu-cs432-websci/fall24-*username*/). 
 
 If you are working locally, make sure that you have committed and pushed your local repo, including `HW3-report.md` and any images you reference, to GitHub. 
 
 Submit the URL of your report (*not the URL of your repo*) in Canvas under HW3. This should be something like  
-https<nolink>://github.com/odu-cs432-websci/spr24-*username*/blob/main/HW3-report.md
+https<nolink>://github.com/odu-cs432-websci/fall24-*username*/blob/main/HW3-report.md
 
 *If you make changes to your report after submitting in Canvas, I will use the last commit time in your repo as your assignment submission time.*
