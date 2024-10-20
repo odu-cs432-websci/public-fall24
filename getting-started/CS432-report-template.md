@@ -3,60 +3,86 @@
 ### CS 432, Fall 2024
 ### Due Date
 
-# Q1
-
-*You may copy the question into your report, but make sure that you make it clear where the question ends and your answer begins.*
+### Q1. Get TimeMaps for Each URI.
 
 ## Answer
 
-The example figure below shows the growth in the number of websites between 1993 and 1996.
-
-![\label{fig:web-growth}](growth-early-web.png)
 
 *If you want to include code in your report, you can insert a screenshot (if it's legible), or you can copy/paste the code into a fenced code block.*
 
 ```python
-#!/usr/local/bin/python3
-# testargs.py
+import argparse
+import subprocess
+import time
 
-import sys
+x = 0
 
-print ("{} is the name of the script." . format(sys.argv[0]))
-print ("There are {} arguments: {}" . format(len(sys.argv), str(sys.argv)))
+def process_uri(uri, x):
+    memgator_path = 'C:\\Users\\ethan\\OneDrive\\Desktop\\CS\\memgator-windows-amd64'
+    
+    stringnumber = str(x)
+    outputfile = "timemap"
+    outputfile += stringnumber
+    outputfile += ".json"
+    
+    print(outputfile)
 
-for ind, arg in enumerate(sys.argv):
-    print ("[{}]: {} {}".format(ind,arg,sys.argv[ind]))
+    
+    try:
+        subprocess.run([memgator_path, "-c",
+                        "'ODU CS432/532 ebarn023@odu.edu'", "-a", "https://raw.githubusercontent.com/odu-cs432-websci/public/main/archives.json",
+                        "-F", "2", "-f", "JSON", uri, ">>", outputfile], shell = True)
+        time.sleep(10)
+    except subprocess.CalledProcessError as e:
+        return f"Error fetching {uri}: {e}"
+
+def process_uris(input_file):
+
+    try:
+        with open(input_file, 'r') as infile:
+            for uris in infile:
+                uri = uris.strip()
+                global x
+                x += 1
+                process_uri(uri, x)           
+                
+                
+                
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('input_file', type=str)
+
+    args = parser.parse_args()
+    process_uris(args.input_file)
+
 ```
 
-The table below shows a simple table.  
 
-|Week|Date|Topic|
-|:---|:---|:---|
-|1|Sep 1, 3|Introduction, What's Vis and Why Do It?|
-|2|Sep 8, 10|Data and Data Cleaning|
-|3|Sep 15, 17|Marks and Channels|
 
-The table below shows an example confusion matrix (you'll see this term later) from <https://en.wikipedia.org/wiki/Confusion_matrix>.
+### Q2. Analyze Mementos Per URI-R.
 
-| | |Actual||
-|---|---|---|---|
-|**Predicted**| |Cat|Dog|
-| |Cat|5 (TP)|3 (FP)|
-| |Dog|2 (FN)|3 (TN)|
+Use the TimeMaps you saved in Q1 to analyze how well the URIs you collected in HW1 are archived.
 
-*You must provide some discussion of every answer. Discuss how you arrived at the answer and the tools you used. Discuss the implications of your answer.*
+Create a table showing how many URI-Rs have certain number of mementos.  For example
 
-# Q2
+|Mementos | URI-Rs |
+|---------:|--------:|
+|   0     |  250   |
+|   1     |  100   |
+|   7     |   50   |
+|   12     |   25   |
+|   19     |   25   |
+|   24     |  20  |
+|   30     |   27   |
+|  57     |    3   |
 
-## Answer
-
-# Q3
-
-## Answer
+##Answer
 
 # References
 
 *Every report must list the references that you consulted while completing the assignment. If you consulted a webpage, you must include the URL.  These are just a couple examples.*
 
-* Stack Overflow, How can I parse (read) and use JSON in Python?, <https://stackoverflow.com/questions/7771011/how-can-i-parse-read-and-use-json-in-python>
-* ChatGPT conversation, Initial prompt: "write a python line to detect if a string ends with .png", <https://chat.openai.com/share/5de76e93-c26b-4665-a0fc-b782b01a9285>
+https://stackoverflow.com/questions/4856583/how-do-i-pipe-a-subprocess-call-to-a-text-file
